@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Курилка Lost Armour</title>
+	<style>
+	@media only all{
+		.layer {
+			width: 900px;
+			margin: auto;
+		}
+	}
+	
+	@media (max-width: 900px){
+		.layer {
+			width: 100%;
+			margin: auto;
+		}
+	}
+	
+	.menu-bar {
+		background-color: #1268ce;
+		height: 40px;
+		border-radius: 5px 5px 0px 0px;
+	}
+	
+	ul.menu-menu {
+		display: block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-family: Calibri, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 15px;
+	}
+	
+	ul.menu-menu:after {
+		display: block;
+		content: ' ';
+		clear: both;
+		float: none;
+	}
+	
+	ul.menu-menu > li {
+		float: left;
+		position: relative;
+	}
+	ul.menu-menu > li > a {
+		display: block;
+		float: left;
+		padding: 10px;
+		color: white;
+		border-bottom: 2px solid rgba(129, 200, 255, 0.9);
+		text-decoration: none;
+		text-align: center;
+	}
+	ul.menu-menu > li > a:hover {
+		background-color: rgba(129, 200, 255, 0.5);
+	}
+	
+	ul.menu-submenu {
+		display: block;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	ul.menu-submenu:after {
+		display: block;
+		content: ' ';
+		clear: both;
+		float: none;
+	}
+	
+	ul.menu-submenu {
+		display: none;
+		position: absolute;
+		width: 240px;
+		top: 40px;
+		left: 0;
+		background-color: white;
+	}
+	ul.menu-submenu > li {
+		display: block;
+	}
+	ul.menu-submenu > li > a {
+		display: block;
+		padding: 10px;
+		color: white;
+		background-color: #1268ce;
+		border-bottom: 2px solid rgba(129, 200, 255, 0.9);
+		text-decoration: none;
+	}
+	ul.menu-submenu > li > a:hover {
+		background-color: rgba(129, 200, 255, 0.95);
+		border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+	}
+	
+	ul.menu-menu > li:hover > ul.menu-submenu {
+		display: block;
+	}
+	
+	.content {		
+		font-family: Geneva, Arial, Helvetica, sans-serif;
+	}
+	</style>
+  </head>
+	<body>
+		<div class="layer">
+			<div class="menu-bar">
+				<ul class="menu-menu">
+					<li>
+						<a href="#">Разделы</a>
+						<ul class="menu-submenu">
+							<li><a href="#war" onclick="open_offtopic('war', 'Война на Донбассе');">Война на Донбассе</a></li>
+							<li><a href="#east" onclick="open_offtopic('east', 'Ближний восток');">Ближний восток</a></li>
+							<li><a href="#caucasus" onclick="open_offtopic('caucasus', 'Кавказ и средняя азия');">Кавказ и средняя азия</a></li>
+							<li><a href="#weapon" onclick="open_offtopic('weapon', 'Оружие и техника');">Оружие и техника</a></li>
+							<li><a href="#politic" onclick="open_offtopic('politic', 'Политика');">Политика</a></li>
+							<li><a href="#accidents" onclick="open_offtopic('accidents', 'Проишествия');">Проишествия</a></li>
+							<li><a href="#nonsense" onclick="open_offtopic('nonsense', 'Юмор \ Бред');">Юмор \ Бред</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="content">
+				<div id="disqus_thread"></div>
+				
+				<script type="text/javascript" defer>
+					/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+					var disqus_shortname = 'lostarmour';
+					var disqus_identifier = 'war';
+					var disqus_url_old = 'http://lostarmour.info/offtopic/war';
+					var disqus_url = '../war';
+					var disqus_config = function () { 
+					  this.language = "ru";
+					};
+					/* * * DON'T EDIT BELOW THIS LINE * * */
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+					/* * * Disqus Reset Function * * */
+					var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+						DISQUS.reset({
+							reload: true,
+							config: function () {
+								this.page.identifier = newIdentifier;
+								this.page.url = newUrl;
+								this.page.title = newTitle;
+								this.language = newLanguage;
+							}
+						});
+					};
+										
+					var open_offtopic = function (new_id, new_title) {
+						disqus_identifier = new_id;
+						disqus_url = 'http://lostarmour.info/offtopic/'+disqus_identifier;
+						reset(disqus_identifier,disqus_url,new_title,'ru');
+						document.title = new_title;
+						history.pushState({}, null, disqus_url);
+					};
+				</script>
+				<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			</div>
+		</div>
+        
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</body>
+</html>
